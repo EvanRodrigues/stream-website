@@ -5,7 +5,7 @@ const express = require('express'),
     port = process.env.PORT || 5000;
 
 //MongoDB Config
-const db = require('./config/ConnectionVars').mongoURI;
+const db = process.env.MONGO_URI || require('./config/ConnectionVars').mongoURI;
 
 //MongoDB Connect
 mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
